@@ -41,6 +41,22 @@ class Person {
     return this.lastName;
   }
 
+   /**
+    * Get the full name of this person
+    * @return the full name of this person
+    */
+   public String getFullName() {
+     return this.firstName + this.lastName;
+   }
+
+   /**
+    * Get the age of this person
+    * @return the age of this person
+    */
+   public int getAge() {
+     return 2024-this.yearOfBirth;
+   }
+
   /**
    * Return the year of birth of this person
    * @return the year of birth of this person
