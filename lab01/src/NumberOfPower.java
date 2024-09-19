@@ -1,6 +1,6 @@
 public class NumberOfPower {
   public static void main(String[] args) {
-    int base = 2;    // Base number
+    double base = 2.0;    // Base number
     int exponent = 3; // Exponent
 
     // Calculate power manually
