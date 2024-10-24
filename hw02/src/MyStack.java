@@ -10,6 +10,7 @@ public class MyStack<T> {
   private ArrayList<T> stack;
 
   /**
+   *
    * Constructs an empty stack.
    */
   public MyStack() {
