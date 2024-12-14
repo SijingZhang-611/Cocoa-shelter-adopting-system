@@ -1,0 +1,298 @@
+/**
+ * First screen styles
+ */
+
+html, body {
+  height: 100%;
+  overflow-y: auto; /* Allow vertical scrolling */
+  margin: 0;
+  padding: 0;
+}
+
+#main {
+  height: auto; /* Set to auto to allow natural content extension */
+  min-height: 100%; /* Ensure at least full screen height */
+
+}
+
+/* divHead: Set as full-screen background */
+#main .divHead {
+  position: fixed; /* Ensure other content displays normally */
+  top: 0;
+  width: 100vw; /* Full screen width */
+  height: 100vh; /* Full viewport height */
+  background-color: #86c9dc;
+  z-index: 0; /* Keep background layer at the lowest level */
+}
+
+.navbar{
+  z-index: 100;
+}
+
+/* divTitle: Full screen width, flex layout for content */
+#main .divTitle {
+  position: relative;
+  display: flex; /* Use Flex layout */
+  flex-wrap: wrap; /* Wrap content when overflowing */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  width: 100%; /* Full screen width */
+  padding: 20px 0 0 0; /* Top and bottom padding */
+  box-sizing: border-box; /* Include padding in dimensions */
+  background-color: #fff; /* Optional: background color */
+  position: relative; /* Ensure these parts display relative to normal flow */
+  z-index: 1; /* Set higher than divHead */
+  background-color: transparent;
+  margin-top: 30px;
+  margin-bottom: 0px;
+}
+
+#main .divTitle img {
+  max-width: 100%; /* Ensure the image width doesn't exceed the container */
+  height: auto; /* Maintain image ratio */
+  flex: 1; /* Adjust width automatically */
+  background-color: transparent;
+}
+.main-logo {
+  width: 60vw; /* Width is 60% of the screen */
+  height: auto; /* Maintain ratio */
+  display: block; /* Prevent inline issues */
+  margin: 0 auto; /* Center horizontally */
+  margin-bottom: 20px;
+}
+
+
+.image-container {
+  position: relative; /* For containing absolutely positioned text */
+  flex: 1; /* Adjust container width automatically */
+  text-align: center;
+}
+
+.image-container img {
+  max-width: 100%; /* Maximum image width is container width */
+  height: auto; /* Maintain image ratio */
+  margin-top: 10px;
+}
+
+.centered-text {
+  position: absolute;
+  top: 80%; /* Set text at 70% vertical height of container */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Offset by half its width and height for precise centering */
+  color: white;
+  font-size: 25rem; /* Adjust font size */
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Add shadow */
+  white-space: nowrap; /* Force no line breaks */
+}
+
+/* divBody: Below divTitle with some spacing */
+#main .divBody {
+  position: relative;
+  margin-top: 0px; /* Spacing from divTitle */
+  padding: 0 20px; /* Optional: padding */
+  position: relative; /* Ensure these parts display relative to normal flow */
+  z-index: 1; /* Set higher than divHead */
+  background: transparent; /* Set divBody background color */
+  padding-top: 30px;
+}
+
+/* Category section styles */
+.category-section {
+  margin-bottom: 30px; /* Spacing between category blocks */
+}
+
+/* Category title styles */
+.category-title {
+  font-size: 18rem; /* Title font size */
+  font-weight: bold;
+  margin-bottom: 15px; /* Spacing between title and list */
+  color: #333; /* Title color */
+  text-align: center;
+}
+
+/* Pet list container */
+.pets-list {
+  display: flex; /* Use Flex layout to arrange pets horizontally */
+  gap: 15px; /* Spacing between cards */
+  flex-wrap: wrap; /* Wrap content when overflowing */
+  justify-content: center; /* New: Center the entire list in the container */
+
+}
+
+/* Default styles for pet cards */
+.divItem {
+  width: calc(34% - 15px); /* Display 3 pets per row */
+  border: 1px solid #ddd; /* Border color */
+  border-radius: 8px; /* Card corners */
+  background-color: #fff; /* Background color */
+  text-align: center; /* Center content */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: transform 0.2s, box-shadow 0.2s; /* Hover effects */
+}
+
+.divItem:hover {
+  transform: translateY(-5px); /* Hover upward effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Hover shadow */
+}
+
+/* Pet image */
+.card-img-top {
+  width: 100%; /* Image width */
+  height: auto; /* Maintain ratio */
+  border-bottom: 1px solid #ddd; /* Border below image */
+  object-fit: cover; /* Ensure the image fills the container while maintaining aspect ratio */
+  border-top-left-radius: 8px; /* Match card corners */
+  border-top-right-radius: 8px;
+}
+
+/* Card inner information area */
+.card-body {
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
+
+.card-body h5 {
+  font-size: 15rem; /* Pet name font size */
+  margin: 2px 0 1px;
+}
+
+.card-body p {
+  margin: 0;
+  font-size: 9rem; /* Description font size */
+  color: #666; /* Description font color */
+  padding-top: 3px;
+}
+
+.card-text.text-end {
+  font-weight: bold; /* Bold price font */
+  font-size: 9rem; /* Description font size */
+  color: #ff5722; /* Price color */
+  margin-top: 2px;
+}
+
+
+
+
+/* Add styles for Bootstrap Modal, compatible with original detailsDialog */
+.modal {
+    z-index: 50 !important;
+}
+
+
+.modal-dialog {
+    z-index: 60 !important;
+    max-width: 90%;
+    margin: auto; /* Center horizontally and vertically */
+    top: 50%; /* Set top distance */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Precise centering */
+    position: fixed; /* Fix position to avoid scroll issues */
+
+}
+
+.modal-content {
+    border-radius: 8px;
+    border: none;
+    background-color: white;
+    position: relative;
+    border: 5px solid #86c9dc; /* Blue-green border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
+.modal-body {
+    padding: 0;
+}
+
+/* Reuse styles from original detailsDialog */
+#main .modal .divContainer {
+    padding: 20rem 20rem 0 20rem;
+    overflow: auto;
+    max-height: 50vh;
+    overflow-y: auto;
+}
+
+/* Image container styles */
+.image-container {
+  width: 100%; /* Container width fills parent element */
+  height: auto; /* Auto adjust height */
+  overflow: hidden; /* Hide overflow */
+  position: relative; /* Reserve for absolutely positioned content */
+}
+
+/* Image styles */
+.image-container img {
+  width: 100%; /* Image width fills container */
+  height: auto; /* Maintain ratio */
+  object-fit: cover; /* Crop image to fill container, can use contain to show full image */
+  display: block; /* Remove extra space below image */
+}
+
+/* Fallback image style on load failure */
+.image-container img[onerror] {
+  object-fit: contain; /* Ensure fallback image displays fully on load failure */
+}
+
+#main .modal .title {
+    height: 28rem;
+    opacity: 1;
+    font-size: 20rem;
+    font-family: PingFangSC, PingFangSC-Semibold;
+    font-weight: 600;
+    color: #333333;
+    line-height: 28rem;
+    letter-spacing: 0;
+    margin-top: 18rem;
+    margin-bottom: 11rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
+#main .modal .content {
+    opacity: 1;
+    font-size: 14rem;
+    font-family: PingFangSC, PingFangSC-Regular;
+    font-weight: 400;
+    text-align: justify;
+    color: #333333;
+    line-height: 24rem;
+}
+
+#main .modal .divNum {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 23rem;
+    margin-bottom: 20rem;
+    padding-left: 20rem;
+    padding-right: 20rem;
+}
+
+#main .modal .divNum .left {
+    font-size: 20rem;
+    font-family: DIN, DIN-Medium;
+    font-weight: 500;
+    text-align: left;
+    color: #e94e3c;
+    line-height: 36rem;
+    letter-spacing: 0rem;
+}
+
+#main .modal .divNum .left span:first-child {
+    font-size: 12rem;
+}
+
+/* Bottom close button, reuse original detailsDialogClose styles */
+#main .modal .detailsDialogClose {
+    position: absolute;
+    bottom: -70rem;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+#main .modal .detailsDialogClose img {
+    width: 44rem;
+    height: 44rem;
+}
