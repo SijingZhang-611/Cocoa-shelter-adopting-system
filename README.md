@@ -1,4 +1,4 @@
-Zhang Sijing  Zhang.sijin@northeastern.edu
+
 To run this app and ensure it functions properly, you may need to set up the database and adjust the path for the pictures in application.yml.
 
 In application.yml:
