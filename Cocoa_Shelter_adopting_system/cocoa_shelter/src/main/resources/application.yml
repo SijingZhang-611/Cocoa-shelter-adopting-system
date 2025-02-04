@@ -1,0 +1,26 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: cocoa
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cocoa?useSSL=false&serverTimezone=UTC
+    username: root
+    password: a11111
+
+logging:
+  level:
+    org:
+      springframework=DEBUG:
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      id-type: ASSIGN_ID
+cocoa:
+  path: /Users/sijingzhang/Desktop/
